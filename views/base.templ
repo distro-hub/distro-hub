@@ -1,0 +1,40 @@
+package views
+
+templ Base(title string) {
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>{ title }</title>
+	<script src="https://unpkg.com/htmx.org@2.0.1"></script>
+	<script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body hx-history="false" hx-push-url="false">
+	if user := ctx.Value("currentUser"); user != nil {
+	@nav()
+	}
+	<main>
+		{ children... }
+	</main>
+</body>
+
+</html>
+}
+
+templ nav() {
+<nav class="flex justify-between items-center">
+	<h1 class="text-3xl font-bold">Distro Hub</h1>
+	<ul class="flex gap-1">
+		<li>
+			<a href="">Home</a>
+		</li>
+		<li>
+			<a href="">Home</a>
+		</li>
+	</ul>
+</nav>
+}
+
