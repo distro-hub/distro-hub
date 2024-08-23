@@ -1,5 +1,9 @@
 package views
 
+import (
+    "distro-hub/domain"
+)
+
 templ Base(title string) {
 <!DOCTYPE html>
 <html lang="en">
@@ -13,8 +17,8 @@ templ Base(title string) {
 </head>
 
 <body hx-history="false" hx-push-url="false">
-	if user := ctx.Value("currentUser"); user != nil {
-	@nav()
+	if user, ok := ctx.Value("currentUser").(domain.User); ok {
+        @nav(user)
 	}
 	<main>
 		{ children... }
@@ -24,10 +28,13 @@ templ Base(title string) {
 </html>
 }
 
-templ nav() {
+templ nav(user domain.User) {
 <nav class="flex justify-between items-center">
 	<h1 class="text-3xl font-bold">Distro Hub</h1>
 	<ul class="flex gap-1">
+		<li>
+            <span>{user.Name}</span>
+		</li>
 		<li>
 			<a href="">Home</a>
 		</li>
