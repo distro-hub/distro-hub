@@ -4,6 +4,7 @@ import (
     "net/http"
     "distro-hub/views"
     "distro-hub/domain"
+    "context"
 )
 
 
@@ -26,7 +27,8 @@ func main() {
     }
 
     mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-        views.HomePage("Distro Hub", distros).Render(r.Context(), w)
+        ctx := context.WithValue(r.Context(), "currentUser", "Radoje")
+        views.HomePage("Distro Hub", distros).Render(ctx, w)
     })
 
 
