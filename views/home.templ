@@ -3,14 +3,14 @@ package views
 import "distro-hub/domain"
 
 templ HomePage(title string, distros domain.Distros) {
-    @Base(title){
-        <div>
-            <h1>Hi mom!</h1>
-            </div>
-            <div>
-            for _, distro := range distros {
-                <div>{distro.Name}</div>
-            }
-        </div>
-    }
+	@Base(title){
+		<div>
+			<h1>Hi mom!</h1>
+			</div>
+			<div>
+			for _, distro := range distros {
+				<div>{distro.Name}</div>
+			}
+		</div>
+	}
 }
