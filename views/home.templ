@@ -1,16 +1,36 @@
 package views
 
-import "distro-hub/domain"
+import (
+    "distro-hub/domain"
+    "distro-hub/views/components"
+    "strconv"
+)
 
 templ HomePage(title string, distros domain.Distros) {
 	@Base(title){
 		<div>
 			<h1>Hi mom!</h1>
 			</div>
+            @DistroList(distros)
 			<div>
-			for _, distro := range distros {
-				<div>{distro.Name}</div>
-			}
+        <form hx-post="/distro" hx-target="#distro-list">
+            <div>
+                <label for="distro_name">Distro Name</label>
+                <input name="distro_name" type="text" id="distro_name" />
+            </div>
+            @components.Button(){
+                <span>Hi mom!</span>
+            }
+        </form>
 		</div>
 	}
+}
+
+
+templ DistroList(distros domain.Distros) {
+    <div id="distro-list">
+        for _, distro := range distros {
+            <div>{strconv.Itoa(distro.ID)} - {distro.Name}</div>
+        }
+    </div>
 }
