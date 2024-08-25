@@ -3,7 +3,6 @@ package views
 import (
     "distro-hub/domain"
     "distro-hub/views/components"
-    "strconv"
 )
 
 templ HomePage(title string, distros domain.Distros) {
@@ -28,9 +27,9 @@ templ HomePage(title string, distros domain.Distros) {
 
 
 templ DistroList(distros domain.Distros) {
-    <div id="distro-list">
+    <div id="distro-list" class="flex gap-4">
         for _, distro := range distros {
-            <div>{strconv.Itoa(distro.ID)} - {distro.Name}</div>
+						@components.DistroCard(distro)
         }
     </div>
 }
