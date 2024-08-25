@@ -30,20 +30,20 @@ func DistroCard(distro domain.Distro) templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div class=\"flex flex-1 p-4 items-center border rounded border-gray-300\"><img width=\"48\" height=\"48\" src=\"https://upload.wikimedia.org/wikipedia/commons/9/9e/UbuntuCoF.svg\"><p class=\"text-xl font-bold ml-2\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<article class=\"flex-1 p-4 border rounded border-gray-300 min-w-[300px]\"><header class=\"flex items-center\"><img width=\"48\" height=\"48\" src=\"https://upload.wikimedia.org/wikipedia/commons/9/9e/UbuntuCoF.svg\"><p class=\"text-xl font-bold ml-2\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var2 string
 		templ_7745c5c3_Var2, templ_7745c5c3_Err = templ.JoinStringErrs(distro.Name)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/components/distro_card.templ`, Line: 10, Col: 48}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/components/distro_card.templ`, Line: 11, Col: 49}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var2))
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</p></div>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</p></header><!-- body --><!-- <footer></footer> --></article>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

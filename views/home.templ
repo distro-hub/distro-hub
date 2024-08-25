@@ -10,9 +10,9 @@ templ HomePage(title string, distros domain.Distros) {
 		<div>
 			<h1>Hi mom!</h1>
 			</div>
-            @DistroList(distros)
+				@DistroList(distros)
 			<div>
-        <form hx-post="/distro" hx-target="#distro-list">
+        <form hx-post="/distro" hx-target="#distro-list" hx-swap="outerHTML">
             <div>
                 <label for="distro_name">Distro Name</label>
                 <input name="distro_name" type="text" id="distro_name" />
@@ -27,9 +27,9 @@ templ HomePage(title string, distros domain.Distros) {
 
 
 templ DistroList(distros domain.Distros) {
-    <div id="distro-list" class="flex gap-4">
+    <section id="distro-list" class="flex flex-wrap gap-4">
         for _, distro := range distros {
 						@components.DistroCard(distro)
         }
-    </div>
+    </section>
 }
