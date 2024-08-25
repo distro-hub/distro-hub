@@ -5,6 +5,7 @@ import (
 	"distro-hub/domain"
 	"distro-hub/middleware"
 	"distro-hub/views"
+	"distro-hub/views/auth"
 	"fmt"
 	"net/http"
 )
@@ -42,8 +43,14 @@ func main() {
 		views.DistroList(distros).Render(r.Context(), w)
 	})
 
-	mux.HandleFunc("GET /auth/login", func(w http.ResponseWriter, r *http.Request) {
-		views.Login().Render(r.Context(), w)
+	mux.HandleFunc("GET /auth", func(w http.ResponseWriter, r *http.Request) {
+		views.Auth().Render(r.Context(), w)
+	})
+	mux.HandleFunc("/auth/login", func(w http.ResponseWriter, r *http.Request) {
+		auth.LoginTab().Render(r.Context(), w)
+	})
+	mux.HandleFunc("/auth/register", func(w http.ResponseWriter, r *http.Request) {
+		auth.RegisterTab().Render(r.Context(), w)
 	})
 	mux.HandleFunc("POST /auth/login", func(w http.ResponseWriter, r *http.Request) {
 		email := r.FormValue("email")

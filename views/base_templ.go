@@ -108,7 +108,7 @@ func nav(user domain.User) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</span></li><li class=\"flex\"><a class=\"hover:bg-gray-100 rounded px-3 py-2 transition\" href=\"/about\">About</a></li><li class=\"flex\"><a class=\"hover:bg-gray-100 rounded px-3 py-2 transition\" href=\"/auth/login\">Log In</a></li></ul></nav>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</span></li><li class=\"flex\"><a class=\"hover:bg-gray-100 rounded px-3 py-2 transition\" href=\"/about\">About</a></li><li class=\"flex\"><a class=\"hover:bg-gray-100 rounded px-3 py-2 transition\" href=\"/auth\">Log In</a></li></ul></nav>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
