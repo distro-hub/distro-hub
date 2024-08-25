@@ -4,26 +4,34 @@ import "distro-hub/views/components"
 
 templ RegisterTab() {
 	<form class="flex flex-col gap-5" method="post" action="/auth/login">
-		<div>
-			<div class="flex flex-col gap-1">
-				<label for="username">Username</label>
-				<input class="rounded border border-gray-300 px-2 py-1" id="username" name="username" type="text" placeholder="John Doe" />
-			</div>
-			<div class="flex flex-col gap-1">
-				<label for="email">Email</label>
-				<input class="rounded border border-gray-300 px-2 py-1" id="email" name="email" type="email" placeholder="e.g. john@doe.com" />
-			</div>
-			<div class="flex flex-col gap-1">
-				<label for="password">Password</label>
-				<input class="rounded border border-gray-300 px-2 py-1" id="password" name="password" type="password" placeholder="******"/>
-			</div>
-			<div class="flex flex-col gap-1">
-				<label for="confirm_password">Confirm Password</label>
-				<input class="rounded border border-gray-300 px-2 py-1" id="confirm_password" name="confirm_password" type="password" placeholder="******"/>
-			</div>
+		<div class="flex flex-col gap-2">
+			<fieldset role="group">
+				<label class="flex flex-col gap-1">
+					<p>Username</p>
+					<input class="rounded border border-gray-300 px-2 py-1" name="username" type="text" placeholder="John Doe" />
+				</label>
+			</fieldset>
+			<fieldset role="group">
+				<label class="flex flex-col gap-1">
+					<p>Email</p>
+					<input class="rounded border border-gray-300 px-2 py-1" name="email" type="email" placeholder="e.g. john@doe.com" />
+				</label>
+			</fieldset>
+			<fieldset role="group">
+				<label class="flex flex-col gap-1">
+					<p>Password</p>
+					<input class="rounded border border-gray-300 px-2 py-1" name="password" type="password" placeholder="******"/>
+				</label>
+			</fieldset>
+			<fieldset role="group">
+				<label class="flex flex-col gap-1">
+					<p>Confirm Password</p>
+					<input class="rounded border border-gray-300 px-2 py-1" name="confirm_password" type="password" placeholder="******"/>
+				</label>
+			</fieldset>
 		</div>
 		@components.Button() {
-			<span>Register</span>
+			<span class="block py-1 font-bold">Register</span>
 		}
 	</form>
 }

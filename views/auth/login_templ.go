@@ -28,7 +28,7 @@ func LoginTab() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<form class=\"flex flex-col gap-5\" method=\"post\" action=\"/auth/login\"><div><div class=\"flex flex-col gap-1\"><label for=\"email\">Email</label> <input class=\"rounded border border-gray-300 px-2 py-1\" id=\"email\" name=\"email\" type=\"email\" placeholder=\"e.g. john@doe.com\"></div><div class=\"flex flex-col gap-1\"><label for=\"password\">Password</label> <input class=\"rounded border border-gray-300 px-2 py-1\" id=\"password\" name=\"password\" type=\"password\" placeholder=\"******\"></div></div>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<form class=\"flex flex-col gap-5\" method=\"post\" action=\"/auth/login\"><div class=\"flex flex-col gap-2\"><fieldset><label class=\"flex flex-col gap-1\"><p>Email</p><input class=\"rounded border border-gray-300 px-2 py-1\" name=\"email\" type=\"email\" placeholder=\"e.g. john@doe.com\"></label></fieldset><fieldset><label class=\"flex flex-col gap-1\"><p>Password</p><input class=\"rounded border border-gray-300 px-2 py-1\" name=\"password\" type=\"password\" placeholder=\"******\"></label></fieldset></div>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -44,7 +44,7 @@ func LoginTab() templ.Component {
 				}()
 			}
 			ctx = templ.InitializeContext(ctx)
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<span>Login</span>")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<span class=\"block py-1 font-bold\">Login</span>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
