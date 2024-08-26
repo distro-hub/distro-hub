@@ -9,20 +9,10 @@ import (
 func main() {
 	mux := http.NewServeMux()
 
-	// mux.HandleFunc("POST /distro", func(w http.ResponseWriter, r *http.Request) {
-	// 	id = id + 1
-	// 	newDistro := domain.Distro{
-	// 		ID:   id,
-	// 		Name: r.FormValue("distro_name"),
-	// 	}
-	// 	fmt.Println(id)
-	// 	distros = append(distros, newDistro)
-	// 	views.DistroList(distros).Render(r.Context(), w)
-	// })
-
 	h := hanlders.NewHandler()
 	// auth
 	mux.Handle("/auth/", h.AuthMux())
+
 	mux.HandleFunc("/", h.HomePage)
 
 	// distro stuff

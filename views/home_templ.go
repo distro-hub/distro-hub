@@ -51,7 +51,7 @@ func HomePage(title string, distros domain.Distros) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(" <div><form hx-post=\"/distro\" hx-target=\"#distro-list\" hx-swap=\"outerHTML\"><div><label for=\"distro_name\">Distro Name</label> <input name=\"distro_name\" type=\"text\" id=\"distro_name\"></div>")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(" <div><form hx-post=\"/distro/distro\" hx-target=\"#distro-list\" hx-swap=\"outerHTML\"><div><label for=\"distro_name\">Distro Name</label> <input name=\"distro_name\" type=\"text\" id=\"distro_name\"></div>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}

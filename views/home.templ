@@ -12,7 +12,7 @@ templ HomePage(title string, distros domain.Distros) {
 			</div>
 				@DistroList(distros)
 			<div>
-        <form hx-post="/distro" hx-target="#distro-list" hx-swap="outerHTML">
+        <form hx-post="/distro/distro" hx-target="#distro-list" hx-swap="outerHTML">
             <div>
                 <label for="distro_name">Distro Name</label>
                 <input name="distro_name" type="text" id="distro_name" />
