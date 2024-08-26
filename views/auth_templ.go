@@ -40,7 +40,7 @@ func Auth() templ.Component {
 				}()
 			}
 			ctx = templ.InitializeContext(ctx)
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<style>\n\t\t\t.selected {\n\t\t\t\tbackground-color: #d5d5d5;\n\t\t\t}\n\t\t</style> <section class=\"min-h-screen grid place-items-center\"><article class=\"flex flex-col gap-5\"><div class=\"flex gap-2 border rounded border-gray-300 bg-gray-100 p-1\" id=\"tabs\" role=\"tablist\"><button hx-get=\"auth/login\" hx-target=\"#form\" class=\"text-sm py-1 flex-1 hover:bg-gray-300 transition rounded selected\" role=\"tab\" aria-controls=\"login-tab\" aria-selected=\"true\">Log in</button> <button hx-get=\"auth/register\" hx-target=\"#form\" class=\"text-sm py-1 flex-1 hover:bg-gray-300 transition rounded\" role=\"tab\" aria-controls=\"register-tab\" aria-selected=\"false\">Register</button></div><hr><div id=\"form\" class=\"\">")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<style>\n\t\t\t.selected {\n\t\t\t\tbackground-color: #d5d5d5;\n\t\t\t}\n\t\t</style> <section class=\"min-h-screen grid place-items-center\"><article class=\"flex flex-col gap-5\"><div class=\"flex gap-2 border rounded border-gray-300 bg-gray-100 p-1\" id=\"tabs\" role=\"tablist\"><button hx-get=\"/auth/login\" hx-target=\"#form\" class=\"text-sm py-1 flex-1 hover:bg-gray-300 transition rounded selected\" role=\"tab\" aria-controls=\"login-tab\" aria-selected=\"true\">Log in</button> <button hx-get=\"/auth/register\" hx-target=\"#form\" class=\"text-sm py-1 flex-1 hover:bg-gray-300 transition rounded\" role=\"tab\" aria-controls=\"register-tab\" aria-selected=\"false\">Register</button></div><hr><div id=\"form\" class=\"\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}

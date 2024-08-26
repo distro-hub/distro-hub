@@ -3,9 +3,9 @@ package main
 import (
 	"context"
 	"distro-hub/domain"
+	hanlders "distro-hub/handlers"
 	"distro-hub/middleware"
 	"distro-hub/views"
-	"distro-hub/views/auth"
 	"fmt"
 	"net/http"
 )
@@ -42,16 +42,6 @@ func main() {
 		distros = append(distros, newDistro)
 		views.DistroList(distros).Render(r.Context(), w)
 	})
-
-	mux.HandleFunc("GET /auth", func(w http.ResponseWriter, r *http.Request) {
-		views.Auth().Render(r.Context(), w)
-	})
-	mux.HandleFunc("/auth/login", func(w http.ResponseWriter, r *http.Request) {
-		auth.LoginTab().Render(r.Context(), w)
-	})
-	mux.HandleFunc("/auth/register", func(w http.ResponseWriter, r *http.Request) {
-		auth.RegisterTab().Render(r.Context(), w)
-	})
 	mux.HandleFunc("POST /auth/login", func(w http.ResponseWriter, r *http.Request) {
 		email := r.FormValue("email")
 		pass := r.FormValue("password")
@@ -61,6 +51,10 @@ func main() {
 		http.Redirect(w, r, "/", 301)
 		return
 	})
+
+	h := hanlders.NewHandler()
+	// auth
+	mux.Handle("/auth/", h.AuthMux())
 
 	s := &http.Server{
 		Addr:    ":6969",
