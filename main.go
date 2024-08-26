@@ -25,6 +25,9 @@ func main() {
 	mux.Handle("/auth/", h.AuthMux())
 	mux.HandleFunc("/", h.HomePage)
 
+	// distro stuff
+	mux.Handle("/distro/", h.DistroMux())
+
 	s := &http.Server{
 		Addr:    ":6969",
 		Handler: middleware.Auth(mux),

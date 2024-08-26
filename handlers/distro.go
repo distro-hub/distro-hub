@@ -20,10 +20,16 @@ var user = domain.User{
 	Age:      27,
 }
 
+func (h *Handler) DistroMux() http.Handler {
+	mux := http.NewServeMux()
+
+	mux.HandleFunc("/", h.HomePage)
+
+	return http.StripPrefix("/distro", mux)
+}
+
 func (h *Handler) HomePage(w http.ResponseWriter, r *http.Request) {
 	title := "Distro Hub"
-	// id := 3
-
 	ctx := context.WithValue(r.Context(), "currentUser", user)
 	views.HomePage(title, distros).Render(ctx, w)
 }
