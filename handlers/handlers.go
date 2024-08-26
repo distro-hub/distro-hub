@@ -1,6 +1,8 @@
 package hanlders
 
-import "distro-hub/domain"
+import (
+	"distro-hub/domain"
+)
 
 type Handler struct {
 	auth *domain.AuthService
