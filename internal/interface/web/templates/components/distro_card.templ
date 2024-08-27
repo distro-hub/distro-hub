@@ -1,0 +1,16 @@
+package components
+
+import (
+	"distro-hub/internal/domain/entity"
+)
+
+templ DistroCard(distro entity.Distro) {
+	<article class="flex-1 p-4 border rounded border-gray-300 min-w-[300px]"> 
+		<header class="flex items-center">
+			<img width="48" height="48" src="https://upload.wikimedia.org/wikipedia/commons/9/9e/UbuntuCoF.svg" />
+			<p class="text-xl font-bold ml-2">{distro.Name}</p>
+		</header>
+		<!-- body -->
+		<!-- <footer></footer> -->
+	</article>
+}
