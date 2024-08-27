@@ -1,6 +1,6 @@
 package templates 
 
-import "distro-hub/views/auth"
+import "distro-hub/internal/interface/web/templates/auth"
 
 templ Auth() {
 	@Layout(){
@@ -23,7 +23,7 @@ templ Auth() {
 					<hr />
 
 				<div id="form" class="">
-					@auth.LoginTab() // by default login page
+					@auth.LoginForm() // by default login page
 				</div>
 			</article>
 		</section>
