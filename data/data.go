@@ -1,16 +1,18 @@
 package data
 
-import "distro-hub/domain"
+import (
+	"distro-hub/internal/domain/entity"
+)
 
-var Distros = domain.Distros{
+var Distros = []entity.Distro{
 	{ID: 1, Name: "Ubuntu"},
 	{ID: 2, Name: "Debian"},
 	{ID: 3, Name: "Arch"},
 }
 
-var User = domain.User{
-	ID:       1,
-	Name:     "Radoje",
-	LastName: "Jezdic",
-	Age:      27,
+var User = entity.User{
+	ID:       "1",
+	Username: "Radoje",
+	Email:    "john@doe.com",
+	Password: "123",
 }
